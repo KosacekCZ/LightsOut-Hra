@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+#game_container {
+  margin: 0 auto;
+  width: 75%;
+  box-shadow: 5px 0px 10px #000000;
+  height: 100vh;
+}
+
+#grid_container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto;
+  justify-content: start;
+  align-content: center;
+  padding-left: 29%;
+  padding-top: 10px;
+}
+
+.tiles_grid[data-value="true"] {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  margin: 0px;
+  background: fuchsia;
+  box-shadow: inset -7px -7px 22px -1px rgba(0,0,0,0.75);
+  border-collapse: collapse;
+}
+
+.tiles_grid[data-value="false"] {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  margin: 0px;
+  background: #414141;
+  box-shadow: inset -7px -7px 22px -1px rgba(0,0,0,0.75);
+  border-collapse: collapse;
+}
+
+.tiles_grid .inner {
+  visibility: hidden;
+}
+
+.reset_btn {
+  width: 25%;
+  height: 100px;
+  margin-top: 20px;
+  font-size: 300%;
+  font-family: 'Open Sans', sans-serif;
+  background: fuchsia;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: inset -7px -7px 22px -1px rgba(0,0,0,0.75);
+  display: inline-block;
+  margin-right: 40px;
+  margin-left: 23%;
+}
+
+.nadpis {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 200%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.steps {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.submit_btn {
+  width: 25%;
+  height: 100px;
+  margin-top: 20px;
+  font-size: 300%;
+  font-family: 'Open Sans', sans-serif;
+  background: #52db05;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: inset -7px -7px 22px -1px rgba(0,0,0,0.75);
+  display: inline-block;
+}
+
+.submit_btn:active {
+  background: #4acb00;
+}
+
+.reset_btn:active {
+  background: #cf00cf;
+}

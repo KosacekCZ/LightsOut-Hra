@@ -1,0 +1,18 @@
+<div id="game_container">
+  <h1 class="nadpis">Most useless game ever</h1>
+  <div *ngIf="weWantRender === true">
+    <div id="grid_container">
+      <ng-container *ngFor="let column of tilesField; let y = index">
+        <div [attr.data-value]="tile" class="tiles_grid" *ngFor="let tile of column; let x = index" (click)="flipVal(x, y)">
+        </div>
+      </ng-container>
+    </div>
+    <p class="steps">Steps: {{steps}}</p>
+  </div>
+  <br>
+  <button class="reset_btn" (click)="fieldFill(); render()">Reset</button>
+  <button class="submit_btn" (click)="submit()">Submit!</button>
+</div>
+
+
+
