@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 // @ts-ignore
 import {FieldType, FieldArchService} from '';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
@@ -10,16 +11,21 @@ import {FieldType, FieldArchService} from '';
 
 export class MainComponent {
 
-  size = 6;
+  size = 4;
   steps = 0;
   weWantRender = false;
   win = false;
+  topScore = 157;
 
   tilesField: FieldType[][] = [];
   tile: FieldType[][] = [];
 
   rint(max): number {
     return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  delay(ms: number): Promise<void> {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
   fieldFill(): void {
@@ -106,8 +112,25 @@ export class MainComponent {
     }
     if (fCheckF === this.size * this.size || fCheckT === this.size * this.size) {
       this.win = true;
+      if (this.steps < this.topScore) {
+        console.log('won.');
+        this.topScore = this.steps;
+        this.steps = 0;
+        this.fieldFill();
+      } else {
+        console.log('won´t.');
+        this.steps = 0;
+      }
     } else {
-      console.log('fuck off');
+      console.log('fuck off go win man!!!§!');
+    }
+  }
+
+  // tslint:disable-next-line:typedef
+  async coolVec() {
+    for (let i = 0; i <= 4; i++) {
+      // @ts-ignore
+      setTimeout(this.flipVal(this.rint(4), this.rint(4)), 1000);
     }
   }
 

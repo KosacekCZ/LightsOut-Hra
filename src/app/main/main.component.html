@@ -1,5 +1,5 @@
 <div id="game_container">
-  <h1 class="nadpis">Most useless game ever</h1>
+  <h1 class="nadpis">Lichten Auf!</h1>
   <div *ngIf="weWantRender === true">
     <div id="grid_container">
       <ng-container *ngFor="let column of tilesField; let y = index">
@@ -8,10 +8,12 @@
       </ng-container>
     </div>
     <p class="steps">Steps: {{steps}}</p>
+    <p class="steps">Best Score: {{topScore}}</p>
   </div>
   <br>
   <button class="reset_btn" (click)="fieldFill(); render()">Reset</button>
   <button class="submit_btn" (click)="submit()">Submit!</button>
+  <button class="cool_btn" (click)="coolVec()">Cool věc!</button>
 </div>
 
 
